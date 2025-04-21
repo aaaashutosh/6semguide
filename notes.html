@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <a href="index.html"><div class="logo"><img src="logo.png" alt="Logo"></div></a>
+    <header>
+        <nav>
+            <ul>
+                <li><button class="button" onclick="window.location.href='index.html'">Home</button></li>
+                <li><button class="button" onclick="window.location.href='notes.html'">Notes</button></li>            
+                <li><button class="button" onclick="window.location.href='syllabus.html'">Syllabus</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="margin: 6px;">Notes Preview👎</h1>
+    <div style="margin: 10px;">
+        <button class="button" onclick="previewPDF('Educational-Research.pdf')">Research in Education</button><br><br>
+        <button class="button" onclick="previewPDF('Digital-Pedagogy.pdf')">Digital Pedagogy</button><br><br>
+        <button class="button" ondblclick="handleDoubleClick()" onclick="previewPDF('https://learncampusbook.blogspot.com/p/bicte-sixth-semester-bicte-note-bicte.html')">Others</button><br><br>
+    </div>
+
+    <div id="pdf-preview" style="margin:10px; display:none;">
+        <iframe id="pdf-frame" width="100%" height="800px"></iframe>
+    </div>
+
+    <footer>
+        <p>©️ Author: Aashutosh Khatiwada | 2025 All rights reserved.</p>
+    </footer>
+
+    <script>
+        function previewPDF(file) {
+            const pdfFrame = document.getElementById('pdf-frame');
+            const pdfPreview = document.getElementById('pdf-preview');
+            pdfFrame.src = file;
+            pdfPreview.style.display = 'block';
+            pdfPreview.scrollIntoView({ behavior: 'smooth' });
+        }
+        function handleDoubleClick(){
+            alert("kati hattar bistarai!");
+        }
+    </script>
+</body>
+</html>
